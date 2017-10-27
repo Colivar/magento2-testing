@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<section id="experius_ponumber" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Ponumber</label>
+			<tab>experius</tab>
+			<resource>Experius_Ponumber::config_experius_ponumber</resource>
+			<group id="general" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<field id="enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select" canRestore="1">
+					<label>Enabled</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="required" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="select" canRestore="1">
+					<label>Required</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="requiredoverride" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="25" translate="label" type="select" canRestore="1">
+                    <label>Use customer level required setting</label>
+                    <comment>When this is set to true, the customer level setting 'Po number required in checkout' (customer account) will override the 'Required' setting above. If set to false, the customer level setting will be ignored.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="tooltip" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label" type="text">
+					<label>Tooltip</label>
+					<comment/>
+				</field>
+				<field id="title" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="40" translate="label" type="text">
+					<label>Title</label>
+					<comment/>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

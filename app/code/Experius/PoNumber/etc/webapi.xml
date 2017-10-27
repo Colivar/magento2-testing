@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/ponumber" method="POST">
+        <service class="Experius\Ponumber\Api\PonumberManagementInterface" method="setPonumber"/>
+        <resources>
+           <resource ref="self" />
+        </resources>
+    </route>
+        <route url="/V1/ponumber/guest" method="POST">
+        <service class="Experius\Ponumber\Api\PonumberGuestManagementInterface" method="setPonumberGuest"/>
+        <resources>    
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>

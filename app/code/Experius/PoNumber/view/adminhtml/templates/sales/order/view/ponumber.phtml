@@ -1,0 +1,10 @@
+<section class="admin__page-section order-view-billing-shipping">
+    <div class="admin__page-section-title">
+        <span class="title"><?php  echo __('Ponumber') ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item order-payment-method">
+            <?php echo $this->getOrder()->getExperiusPoNumber(); ?>
+        </div>
+    </div>
+</section>

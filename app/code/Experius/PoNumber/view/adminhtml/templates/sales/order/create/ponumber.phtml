@@ -1,0 +1,43 @@
+<section class="admin__page-section order-view-experius-ponumber">
+    <div class="admin__page-section-title">
+        <span class="title"><?php  echo __('Ponumber') ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item">    
+            <div class="admin__field field">
+                <label class="label admin__field-label" for="experius_ponumber">
+                    <span><?php echo __('Ponumber') ?></span>
+                </label>
+            <div class="admin__field-control control">
+                <input id="experius_ponumber" class="admin__control-text" name="experius_ponumber" value="<?php echo $this->getQuote()->getExperiusPoNumber(); ?>" type="text">
+            </div>
+        </div>
+    </div>
+    <script>
+		jQuery(document).ready(function(){
+            jQuery('body').append('<div class="loading-mask" data-role="loader" style="display: none;"><div class="popup popup-loading"><div class="popup-inner"><img alt="<?php echo __('Loading...');?>" src="<?php echo $this->getViewFileUrl('images/loader-2.gif'); ?>"><?php echo __('Please wait...');?></div></div></div>');
+			jQuery('#experius_ponumber').change(function(){
+				jQuery(".loading-mask").show();
+                
+                payload = {
+                    cartId: '<?php echo $this->getQuote()->getId(); ?>',
+                    ponumber: jQuery(this).val()
+                };
+                
+				jQuery.ajax({
+				  type: "POST",
+				  url: "<?php echo $this->getUrl('ponumber/ajax/save'); ?>",
+				  data: payload,
+				  success: function(){
+				  	jQuery(".loading-mask").hide();
+				  },
+				});
+			});
+		});
+	</script>
+	<style>
+		.order-view-experius-ponumber, .order-account-information {
+			margin-bottom: 1em;
+		}
+	</style>
+</section>

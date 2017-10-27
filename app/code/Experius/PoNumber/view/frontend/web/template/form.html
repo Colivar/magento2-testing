@@ -1,0 +1,9 @@
+<div>
+    <form id="custom-checkout-form" class="form form-login" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}" data-bind="blockLoader: isLoading">
+        <fieldset class="fieldset" data-bind="blockLoader: isLoading">
+            <!-- ko foreach: getRegion('custom-checkout-form-fields') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </fieldset>
+    </form>
+</div>
