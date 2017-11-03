@@ -1,0 +1,22 @@
+{
+    "name": "tddwizard/fixtures",
+    "description": "",
+    "authors": [
+        {
+            "email": "carl@experius.nl",
+            "name": "Carl Maassen"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "experius/module-core": "1.0.*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "TddWizard\\Fixtures\\": ""
+        }
+    }
+}
